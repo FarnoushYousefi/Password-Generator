@@ -10,7 +10,7 @@
 // var numChars = '0123456789';
 // var specialChars = '~!@#$%^&*()_+-=';
 var LOWERCASE_CHAR_CODES = getRandomLower();
-var UPPER_CASE_CHAR_CODES = getRandomUpper;
+var UPPER_CASE_CHAR_CODES = getRandomUpper();
 var NUMBER_CASE_CHAR_CODES = getRandomNumber();
 var SYMBOL_CHAR_CODES = getRandomSymbol();
 
