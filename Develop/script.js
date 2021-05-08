@@ -9,10 +9,10 @@
 // var lwrChars = 'abcdefghijklmnopqrstuvwxyz';
 // var numChars = '0123456789';
 // var specialChars = '~!@#$%^&*()_+-=';
-const LOWERCASE_CHAR_CODES = getRandomLower();
-const UPPER_CASE_CHAR_CODES = getRandomUpper;
-const NUMBER_CASE_CHAR_CODES = getRandomNumber();
-const SYMBOL_CHAR_CODES = getRandomSymbol();
+var LOWERCASE_CHAR_CODES = getRandomLower();
+var UPPER_CASE_CHAR_CODES = getRandomUpper;
+var NUMBER_CASE_CHAR_CODES = getRandomNumber();
+var SYMBOL_CHAR_CODES = getRandomSymbol();
 
 // let characterAmount=parseInt(prompt("How many characters do you want the password to be? The password cannot be less than 8 or more than 128 characters."));
 
