@@ -14,8 +14,8 @@ The criteria that the password is able to meet are:
     *special characters
     *numeric characters 
 
-##The final product, deploy link
+## The final product, deploy link
 https://farnoushyousefi.github.io/friendly-parakeet/
 
 ## GitHub link
-
+https://github.com/FarnoushYousefi/friendly-parakeet
