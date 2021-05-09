@@ -19,3 +19,7 @@ https://farnoushyousefi.github.io/friendly-parakeet/
 
 ## GitHub link
 https://github.com/FarnoushYousefi/friendly-parakeet
+
+## How to Approach this Project
+I implement this project mostly though the recursive function.
+I have created the getRandomLower(), getRandomUpper(), getRandomNumber(), getRandomSymbol() to generate the corresponding elements, and call them in the loopThrough function
