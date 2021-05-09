@@ -1,20 +1,8 @@
-// Assignment code here
-// const randomFunc = {
-//   lower: getRandomLower,
-//   upper: getRandomUpper,
-//   number: getRandomNumber,
-//   symbol: getRandomSymbol,
-// };
-// var uprChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-// var lwrChars = 'abcdefghijklmnopqrstuvwxyz';
-// var numChars = '0123456789';
-// var specialChars = '~!@#$%^&*()_+-=';
-var LOWERCASE_CHAR_CODES = getRandomLower();
-var UPPER_CASE_CHAR_CODES = getRandomUpper();
-var NUMBER_CASE_CHAR_CODES = getRandomNumber();
-var SYMBOL_CHAR_CODES = getRandomSymbol();
-
-// let characterAmount=parseInt(prompt("How many characters do you want the password to be? The password cannot be less than 8 or more than 128 characters."));
+var uprChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var lwrChars = 'abcdefghijklmnopqrstuvwxyz';
+var numChars = '0123456789';
+var specialChars = '~!@#$%^&*()_+-=';
+var finalPass = '';
 
 function generatePassword() {
   var passwordBank = '';
@@ -23,8 +11,16 @@ function generatePassword() {
   var useUpperCase = confirm('Do you want to include uppercase characters?');
   var useNumeric = confirm('Do you want to include numeric characters?');
   var useSpecial = confirm('Do you want to include special characters?');
-  var Long = parseInt(prompt('How long'));
+  var long = parseInt(
+    prompt(
+      'How many characters do you want the password to be? The password cannot be less than 8 or more than 128 characters."))'
+    )
+  );
 
+  if (long < 8 || long > 128) {
+    window.alert('the Password should be in the range of 8 and 128');
+    return generatePassword();
+  }
   if (
     useLowerCase == false &&
     useUpperCase == false &&
@@ -33,28 +29,59 @@ function generatePassword() {
   ) {
     window.alert('Please select one type of character');
     return generatePassword();
-    //  console.log(useLowerCase,useUpperCase, useNumeric,useSpecial)
   }
 
-  if (useSpecial) {
-    passwordBank += SYMBOL_CHAR_CODES;
-  }
-  if (useUpperCase) {
-    passwordBank += UPPER_CASE_CHAR_CODES;
-  }
-  if (useNumeric) {
-    passwordBank += NUMBER_CASE_CHAR_CODES;
-  }
-
-  // for (var i = 0; i < Long.length(); i++) {
-  //   var pass = '';
-  // }
-
-  //password in a banl of eligible char, wrtie a for loop long time, aet a random char out of bank, and add to the password
-  //which should another string
-  console.log(passwordBank);
-  return passwordBank;
+  loopThrough(useLowerCase, useUpperCase, useNumeric, useSpecial, long);
+  return finalPass;
 }
+
+var loopThrough = function (
+  useLowerCase,
+  useUpperCase,
+  useNumeric,
+  useSpecial,
+  long
+) {
+  for (var i = 0; i < long; i++) {
+    //var flag = false;
+    if (finalPass.length === long) {
+      break;
+    }
+    var rand = Math.floor(Math.random() * 4);
+
+    switch (rand) {
+      case 0:
+        if (useLowerCase) {
+          finalPass += getRandomLower();
+          //flag = true;
+        }
+        break;
+      case 1:
+        if (useUpperCase) {
+          finalPass += getRandomUpper();
+          //flag = true;
+        }
+        break;
+      case 2:
+        if (useNumeric) {
+          finalPass += getRandomNumber();
+          //flag = true;
+        }
+        break;
+      case 3:
+        if (useSpecial) {
+          finalPass += getRandomSymbol();
+        }
+        break;
+      default:
+        break;
+    }
+
+    if (finalPass.length < long) {
+      loopThrough(useLowerCase, useUpperCase, useNumeric, useSpecial, long);
+    }
+  }
+};
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
