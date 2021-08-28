@@ -15,7 +15,7 @@ The criteria that the password is able to meet are:
     *numeric characters 
 
 ## The final product, deploy link
-https://farnoushyousefi.github.io/friendly-parakeet/
+https://farnoushyousefi.github.io/Password-Generator/
 
 ## GitHub link
 https://github.com/FarnoushYousefi/friendly-parakeet
